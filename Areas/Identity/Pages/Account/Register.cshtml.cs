@@ -69,7 +69,7 @@ namespace personalblog.Areas.Identity.Pages.Account
             {
                 var user = new IdentityUser { UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
-                await _userManager.AddToRoleAsync(user, "Author"); // exception
+
 
                 if (result.Succeeded)
                 {
