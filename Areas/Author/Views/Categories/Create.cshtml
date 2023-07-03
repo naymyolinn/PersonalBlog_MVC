@@ -1,0 +1,48 @@
+@model personalblog.Models.ViewModels.CategoryVM
+
+@{
+    ViewData["Title"] = "Create a Category";
+}
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('../img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>@ViewData["Title"]</h1>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+ 
+  <div class="container">
+<div class="row">
+    <div class="col-lg-10 col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                      <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label asp-for="Categoryname" class="control-label"></label>
+                @Html.TextBoxFor(m=>m.Categoryname,new{@class="form-control"})
+                <!-- <input asp-for="Categoryname" class="form-control" placeholder="Category Name" autofocus /> -->
+                <p class="help-block text-danger">
+                    <span asp-validation-for="Categoryname" class="text-danger"></span>
+                </p>
+                
+            </div>
+
+          </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

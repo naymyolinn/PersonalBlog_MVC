@@ -1,0 +1,8 @@
+bin/*
+wwwroot/
+.vscode
+Migrations/
+obj/
+Properties/
+*.json
+

@@ -1,0 +1,82 @@
+@model IEnumerable<personalblog.Models.Category>
+
+ @{
+    ViewData["Title"] = "Categories";
+}
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('../img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>@ViewData["Title"]</h1>
+            <a asp-action="Create" class="btn btn-primary">Create Category</a>
+            <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<div class="container">
+   <div class="row">
+       <div class="col-lg-10 col-md-12 mx-auto">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <tr></tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoryname)
+            </th>
+          
+            <th></th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <tr></tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Categoryname)
+            </th>
+            <th></th>         
+           
+        </tr>
+    </tfoot>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Categoryname)
+            </td>
+            
+            <td>
+               
+                  <a asp-action="Edit" asp-route-id="@item.Cateid">
+                     <span class="edit">
+                    Edit
+                    </span>            
+                  </a>          |
+                <a asp-action="Details" asp-route-id="@item.Cateid">
+                  <span class="details">
+                   Details
+                    </span>
+                </a>            |
+                <a asp-action="Delete" asp-route-id="@item.Cateid">
+                  <span class="delete">
+                    Delete
+                    </span>
+                </a>
+            </td>
+        </tr>
+          
+}
+ </tbody>
+</table>
+                   
+       </div>
+   </div>
+</div>
+               
+ 

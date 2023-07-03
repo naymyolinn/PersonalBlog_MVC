@@ -1,0 +1,96 @@
+@model personalblog.Models.ViewModels.PostVM
+
+@{
+    ViewData["Title"] = "Create a Post";
+}
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('../img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>@ViewData["Title"]</h1>
+            <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            <!-- <span class="subheading">A Blog Theme by Start Bootstrap</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+<div class="row">
+    <div class="col-lg-10 col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                      <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" placeholder="Title" />
+                <p class="help-block text-danger">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </p>
+            </div>
+            
+            <div class="form-group floating-label-form-group controls">
+                <label asp-for="Categoryid" class="control-label"></label>
+                <select asp-for="Categoryid" asp-items="ViewBag.Categoryid" class="form-control"></select>
+                <p class="help-block text-danger">
+                    <span asp-validation-for="Categoryid" class="text-danger"></span>
+                </p>
+            </div>
+
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label asp-for="Subtitle" class="control-label"></label>
+                <input asp-for="Subtitle" class="form-control" placeholder="Subtitle" />
+                <p class="help-block text-danger">
+                    <span asp-validation-for="Subtitle" class="text-danger"></span>
+                </p>
+                
+            </div>
+
+          </div>
+            
+           <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+                <label asp-for="Body" class="control-label"></label>
+                <!-- <input asp-for="Body" class="form-control" placeholder="Body" /> -->
+                <textarea asp-for="Body" class="form-control" placeholder="Body" >                  
+                
+                </textarea>
+                <p class="help-block text-danger">
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </p>
+                
+               
+                
+            </div>
+
+          </div>
+             <div class="form-group ">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+  </div>
+
+            </div>
+
+</div>
+
+
+
+  <script src="~/lib/tinymce/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+    selector: '#Body',
+    height: 500,
+    theme: 'silver',
+    menubar: false
+    });
+  </script>
+}
+
+

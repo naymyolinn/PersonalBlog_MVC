@@ -1,0 +1,62 @@
+@model IEnumerable<personalblog.Models.Comment>
+   
+    @{
+    ViewData["Title"]="Comments";
+    }
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('../img/home-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="site-heading">
+                        <h1>@ViewData["Title"]</h1>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-md-12 mx-auto">
+                <table class="table table-bordered">
+                    
+                    <thead>
+                        <tr>
+                        <tr></tr>
+                        <th>
+  
+                            @Html.DisplayNameFor(model => model.CommentText)
+                            
+                        </th>
+
+                        <th></th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+
+                    </tfoot>
+                    <tbody>
+                        @foreach (var item in Model) {
+                        <tr>
+                            <td>
+
+                             <b>@Html.DisplayFor(modelIteml => item.Posts.Title)</b>  
+
+                               <hr>
+                                @Html.DisplayFor(modelItem => item.CommentText)
+                               <hr>  
+
+
+
+                            </td>
+
+                            <td>
+
+
+                            </td>
+                        </tr>
+
+                        }

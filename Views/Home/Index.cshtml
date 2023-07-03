@@ -1,0 +1,59 @@
+﻿@model IEnumerable<personalblog.Models.Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Page Header -->
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Personal Blog</h1>
+            <span class="subheading">Develop by NEXIS Group</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+  <!-- <div class="container">
+    <div class="row">
+       <div class="col-lg-8 col-md-10 mx-auto">
+            @Html.DisplayNameFor(model => model.Title)
+           
+    </div>
+  </div>
+  </div> -->
+        
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        @foreach(var item in Model){
+          <div class="post-preview">
+        <a asp-action="View" asp-route-id="@item.Id">
+            <h2 class="post-title">
+              @Html.DisplayFor(i=> item.Title) 
+            </h2>
+          </a>
+          <p class="post-meta">Posted by
+            <a href="#">Start Bootstrap</a>
+            on @Html.DisplayFor(i=> item.CreatedAt)</p>
+        </div>
+        <hr>
+        <b>@item.Comment.Count @(item.Comment.Count > 0 ? "Comments": "Comment")</b>
+        <hr>
+        }
+        
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" asp-action="Create" asp-controller="posts" asp-areas="author"  >Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
