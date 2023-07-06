@@ -32,7 +32,7 @@ namespace personalblog
 
             services.AddDbContext<BlogContext>(options =>
             options.UseSqlServer(
-                Configuration.GetConnectionString("DefaultConnection")));
+                Configuration.GetConnectionString("BlogcontextConnection")));
 
             services.AddDefaultIdentity<IdentityUser>()
                 .AddEntityFrameworkStores<BlogContext>();
