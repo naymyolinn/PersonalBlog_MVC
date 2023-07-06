@@ -1,0 +1,84 @@
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: 0.75rem;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0.4rem;
+}
+.bg-img {
+  background-image: url("../img/home-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.login {
+  background: url("../img/login.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding: 1em;
+  display: flexbox;
+  border-radius: 3%;
+}
+.container {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s;
+}
+@-webkit-keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes animatezoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  -webkit-text-fill-color: rgb(0, 255, 242);
+}
+h4 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  text-align: center;
+  -webkit-text-fill-color: rgb(0, 255, 242);
+}
+.form-control {
+  position: inherit;
+  border-radius: 1em;
+  padding: 1.2em;
+}
+#forgot-password p {
+  color: white;
+  text-align: center !important;
+}
+.reg p {
+  color: white !important;
+  text-align: center !important;
+}
+.btn-primary {
+  padding: 5em;
+  border-radius: 1em;
+}
+.btn {
+  padding: 2rem;
+}
+#account {
+  padding: 1em;
+  position: relative;
+}

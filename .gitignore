@@ -1,8 +1,7 @@
 bin/
-wwwroot/
 .vscode
-Migrations/
 obj/
 Properties/
-*.json
+appsettings.Development.json
+
 
