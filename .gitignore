@@ -2,6 +2,6 @@ bin/
 .vscode
 obj/
 Properties/
-appsettings.Development.json
+.Development.json
 
 
